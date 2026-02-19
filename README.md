@@ -1,7 +1,3 @@
-Perfeito. Abaixo está o **README.md completo**, estruturado de forma profissional, pronto para você copiar e colar no seu repositório.
-
----
-
 # 🚀 Notification Service
 
 Microserviço robusto e resiliente para envio de notificações, construído com **Spring Boot 3** e **Java 21**.
