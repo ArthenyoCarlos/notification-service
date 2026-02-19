@@ -1,3 +1,41 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: notification-service
+
+  # Configuração do RabbitMQ
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 3000ms # Tenta de novo após 3 segundos
+          max-attempts: 3 # Tenta no máximo 3 vezes
+          multiplier: 2.0 # Dobra o tempo a cada falha
+
+  # Configuração do Redis
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  # Configuração de E-mail
+
+    mail:
+        host: ${MAIL_HOST:sandbox.smtp.mailtrap.io}
+        port: ${MAIL_PORT:2525}
+        username: ${MAIL_USERNAME}
+        password: ${MAIL_PASSWORD}
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+
