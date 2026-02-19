@@ -38,7 +38,8 @@ public class NotificationConsumer {
             mailSender.send(email);
             System.out.println("E-mail enviado com sucesso para: " + message.getDestination());
         } catch (Exception e) {
-            System.err.println("Erro ao enviar e-mail: " + e.getMessage());
+            System.err.println("Falha ao enviar e-mail. Ativando Retry...");
+            throw new RuntimeException("Erro de conexão com servidor de e-mail", e);
         }
     }
 }

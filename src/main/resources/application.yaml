@@ -15,9 +15,10 @@ spring:
       simple:
         retry:
           enabled: true
-          initial-interval: 3000ms # Tenta de novo após 3 segundos
+          initial-interval: 5000ms # Tenta de novo após 5 segundos
           max-attempts: 3 # Tenta no máximo 3 vezes
           multiplier: 2.0 # Dobra o tempo a cada falha
+        default-requeue-rejected: false # Para nao Virar um loop infinito
 
   # Configuração do Redis
   data:
