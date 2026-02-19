@@ -3,6 +3,7 @@ Content-Type: application/json
 
 {
   "destination": "junior@dev.com",
+  "userName" : "Junior",
   "message": "Seu primeiro sistema assíncrono!",
   "channel": "EMAIL",
   "template": "welcome-email"

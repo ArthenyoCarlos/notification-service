@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class NotificationRequestDTO {
 
     private String destination;
+    private String userName;
     private String message;
     private String channel;
     private String template;

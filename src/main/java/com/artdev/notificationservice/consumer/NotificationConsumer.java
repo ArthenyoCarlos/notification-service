@@ -25,6 +25,10 @@ public class NotificationConsumer {
 
         String finalMessage = (templateContent != null) ? templateContent : message.getMessage();
 
+        if (message.getUserName() != null) {
+            finalMessage = finalMessage.replace("{nome}", message.getUserName());
+        }
+
         SimpleMailMessage email = new SimpleMailMessage();
         email.setTo(message.getDestination());
         email.setSubject("Nova Notificação do Sistema");
